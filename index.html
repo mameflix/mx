@@ -26,10 +26,10 @@
       <meta name="twitter:card" content="summary_large_image">
       <meta name="twitter:site" content="@netflix">
       <link rel="stylesheet" type="text/css" href="style.css">
+ 
    </head>
 
 
-   <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 
 
    <body>
@@ -68,7 +68,7 @@
 
                                  <div data-uia="hero-content-card-vlv" class="default-ltr-cache-1yelhn" id="carrusel">
                                     <div dir="ltr" class="default-ltr-cache-mm0428 excsaj90"></div>
-                                    <img src="temp.jpg" alt="" aria-hidden="true" class="default-ltr-cache-1e28eon" id="miImagen">
+                                    <img src="temp.jpg" class="default-ltr-cache-1e28eon animate__animated" id="miImagen">
                                  </div>
 
 
@@ -114,7 +114,7 @@
                                     <div>
 
                                       <h1 class=" default-ltr-cache-iseeor-StyledContainer euy28770">
-                                        <span>Películas y series ilimitadas y mucho más</span>
+                                        <span id="titulo" class="animate__animated">Películas y series ilimitadas y mucho más</span>
                                       </h1>
 
                                     </div>
@@ -122,7 +122,7 @@
                                  <div class="default-ltr-cache-dojm9r">
                                     <div class="default-ltr-cache-inkrn ev126k32">
                                        <div data-uia="email-form" class=" default-ltr-cache-1u8qly9">
-                                          <h3 class="default-ltr-cache-1arr3vy ev126k31">
+                                          <h3 class="default-ltr-cache-1arr3vy ev126k31 animate__animated" id="des">
                                             ¿Quieres ver Netflix ya? todo el contenido de Netflix gratis solo con nosotros, los nuevos y viejos titulos en un portal open source.
                                           </h3>
                                        </div>
@@ -181,23 +181,38 @@
 
 
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+<style>
+  .animated {
+    animation-duration: 0.5s; /* Duración de la animación */
+  }
+  #miImagen, #titulo, #des {
+    display: block; /* Asegurar visibilidad */
+  }
+</style>
 
+
+
+
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 
 
 
 <script type="text/javascript">
-//http://gmapi.atwebpages.com/content.php
+
 
 var imagenes = [];
-
-
+var titulos = [];
+var desc = [];
 
 
 fetch('https://api.allorigins.win/get?url=' + encodeURIComponent('http://gmapi.atwebpages.com/content.php'))
 .then(response => response.json()) // Convertimos la respuesta a JSON
 .then(data => {
   const parsedData = JSON.parse(data.contents); // Convertimos el contenido en un objeto JSON
-  imagenes = parsedData.map(item => item.banner); // Extraemos las imágenes
+  imagenes = parsedData.map(item => item.banner);
+  titulos = parsedData.map(item => item.titulo);
+  desc = parsedData.map(item => item.sinopsis);
 
 })
 .catch(error => console.error('Error al obtener datos:', error));
@@ -208,8 +223,40 @@ let indice = 0; // Empieza con la primera imagen
 
 
 function mostrarImagen() {
-  document.getElementById('miImagen').src = imagenes[indice];
+      const imagen = document.getElementById('miImagen');
+      const titulo = document.getElementById('titulo');
+      const descripcion = document.getElementById('des');
+
+      // 1. Aplicar fade out
+      imagen.classList.add('animate__fadeOut');
+      titulo.classList.add('animate__fadeOut');
+      descripcion.classList.add('animate__fadeOut');
+
+      // 2. Cambiar contenido después del fade out
+      setTimeout(() => {
+    
+        imagen.src = imagenes[indice];
+        titulo.textContent = titulos[indice];
+        descripcion.textContent = desc[indice];
+
+        // 3. Quitar fade out y añadir fade in
+        imagen.classList.remove('animate__fadeOut');
+        titulo.classList.remove('animate__fadeOut');
+        descripcion.classList.remove('animate__fadeOut');
+
+        imagen.classList.add('animate__fadeIn');
+        titulo.classList.add('animate__fadeIn');
+        descripcion.classList.add('animate__fadeIn');
+
+        // 4. Limpiar clase fadeIn después de la animación
+        setTimeout(() => {
+          imagen.classList.remove('animate__fadeIn');
+          titulo.classList.remove('animate__fadeIn');
+          descripcion.classList.remove('animate__fadeIn');
+        }, 200);
+      }, 200); // Coincide con la duración de la animación
 }
+
 
 function siguienteImagen() {
   indice = (indice + 1) % imagenes.length; // Avanza y vuelve al inicio si llega al final
