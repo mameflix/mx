@@ -27,79 +27,123 @@
       <meta name="twitter:site" content="@netflix">
       <link rel="stylesheet" type="text/css" href="style.css">
    </head>
+
+
+   <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+
    <body>
+
+
       <div class="default-ltr-cache-1yc97eb e1n63bt34">
          <div class="default-ltr-cache-11en623 e1n63bt33">
-            <div class="default-ltr-cache-1rqw1gv">
-               <div data-uia="nmhp-hero" role="group" aria-roledescription="carousel" aria-label="Contenido destacado" class="default-ltr-cache-jbq1me ec5wt2e1">
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="default-ltr-cache-1rqw1gv">
+<div data-uia="nmhp-hero" role="group" aria-roledescription="carousel" aria-label="Contenido destacado" class="default-ltr-cache-jbq1me ec5wt2e1">
+
+
+
+
+
+
+
                   <div class="default-ltr-cache-s85dir e1oj033r0">
+                     
                      <div class="default-ltr-cache-qa9grc">
                         <div class="default-ltr-cache-zxlxvv">
                            <div class="default-ltr-cache-gmyvkb">
                               <div class="default-ltr-cache-yxgczw">
-                                 <div data-uia="hero-content-card-vlv" class="default-ltr-cache-1yelhn">
+
+
+                                 <div data-uia="hero-content-card-vlv" class="default-ltr-cache-1yelhn" id="carrusel">
                                     <div dir="ltr" class="default-ltr-cache-mm0428 excsaj90"></div>
-                                    <img src="https://assets.nflxext.com/ffe/siteui/vlv3/fbf440b2-24a0-49f5-b2ba-a5cbe8ea8736/web_tall_panel/MX-es-20250324-TRIFECTA-perspective_b1df34ca-4765-4547-9e3f-6e37102f30a3_large.jpg" srcset="https://assets.nflxext.com/ffe/siteui/vlv3/fbf440b2-24a0-49f5-b2ba-a5cbe8ea8736/web_tall_panel/MX-es-20250324-TRIFECTA-perspective_b1df34ca-4765-4547-9e3f-6e37102f30a3_large.jpg 2000w, https://assets.nflxext.com/ffe/siteui/vlv3/fbf440b2-24a0-49f5-b2ba-a5cbe8ea8736/web_tall_panel/MX-es-20250324-TRIFECTA-perspective_b1df34ca-4765-4547-9e3f-6e37102f30a3_medium.jpg 1279w, https://assets.nflxext.com/ffe/siteui/vlv3/fbf440b2-24a0-49f5-b2ba-a5cbe8ea8736/web_tall_panel/MX-es-20250324-TRIFECTA-perspective_b1df34ca-4765-4547-9e3f-6e37102f30a3_small.jpg 959w" alt="" aria-hidden="true" class="default-ltr-cache-1e28eon">
+                                    <img src="temp.jpg" alt="" aria-hidden="true" class="default-ltr-cache-1e28eon" id="miImagen">
                                  </div>
+
+
+
                               </div>
+
                            </div>
                         </div>
                      </div>
+
+
                      <div class="default-ltr-cache-1wmy9hl">
+                        
+
                         <div class="default-ltr-cache-bit1lh">
                            <div class="default-ltr-cache-178a237">
-                              <button aria-label="Anterior" class="default-ltr-cache-afh1q5">
+                              <button aria-label="Anterior" class="default-ltr-cache-afh1q5" onclick="anteriorImagen()">
                                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" role="img" viewBox="0 0 24 24" width="24" height="24" data-icon="ChevronLeftStandard" aria-hidden="true">
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M8.41409 12L15.707 19.2928L14.2928 20.7071L6.29277 12.7071C6.10523 12.5195 5.99988 12.2652 5.99988 12C5.99988 11.7347 6.10523 11.4804 6.29277 11.2928L14.2928 3.29285L15.707 4.70706L8.41409 12Z" fill="currentColor"></path>
                                  </svg>
                               </button>
                            </div>
                            <div class="default-ltr-cache-1f6yja9">
-                              <button aria-label="Siguiente" class="default-ltr-cache-afh1q5">
+                              <button aria-label="Siguiente" class="default-ltr-cache-afh1q5" onclick="siguienteImagen()">
                                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" role="img" viewBox="0 0 24 24" width="24" height="24" data-icon="ChevronRightStandard" aria-hidden="true">
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M15.5859 12L8.29303 19.2928L9.70725 20.7071L17.7072 12.7071C17.8948 12.5195 18.0001 12.2652 18.0001 12C18.0001 11.7347 17.8948 11.4804 17.7072 11.2928L9.70724 3.29285L8.29303 4.70706L15.5859 12Z" fill="currentColor"></path>
                                  </svg>
                               </button>
                            </div>
                         </div>
-                        <div class="default-ltr-cache-qkwaie">
-                           <div class="default-ltr-cache-178a237">
-                              <button aria-label="Anterior" class="default-ltr-cache-2s5di2">
-                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" role="img" viewBox="0 0 24 24" width="24" height="24" data-icon="ChevronLeftStandard" aria-hidden="true">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M8.41409 12L15.707 19.2928L14.2928 20.7071L6.29277 12.7071C6.10523 12.5195 5.99988 12.2652 5.99988 12C5.99988 11.7347 6.10523 11.4804 6.29277 11.2928L14.2928 3.29285L15.707 4.70706L8.41409 12Z" fill="currentColor"></path>
-                                 </svg>
-                              </button>
-                           </div>
-                           <div class="default-ltr-cache-1f6yja9">
-                              <button aria-label="Siguiente" class="default-ltr-cache-2s5di2">
-                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" role="img" viewBox="0 0 24 24" width="24" height="24" data-icon="ChevronRightStandard" aria-hidden="true">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M15.5859 12L8.29303 19.2928L9.70725 20.7071L17.7072 12.7071C17.8948 12.5195 18.0001 12.2652 18.0001 12C18.0001 11.7347 17.8948 11.4804 17.7072 11.2928L9.70724 3.29285L8.29303 4.70706L15.5859 12Z" fill="currentColor"></path>
-                                 </svg>
-                              </button>
-                           </div>
-                        </div>
+
+           
+
+
                         <div aria-label="1 de 3" role="region" aria-roledescription="slide" class="default-ltr-cache-ba5wh8">
                            <div class="default-ltr-cache-1d3w5wq">
+
+
+
+
                               <div class="default-ltr-cache-1psw9ac ec5wt2e0">
                                  <div class="default-ltr-cache-1olnv9u">
                                     <div>
-                                       <h1 class=" default-ltr-cache-iseeor-StyledContainer euy28770"><span>Películas y series ilimitadas y mucho más</span></h1>
+
+                                      <h1 class=" default-ltr-cache-iseeor-StyledContainer euy28770">
+                                        <span>Películas y series ilimitadas y mucho más</span>
+                                      </h1>
 
                                     </div>
                                  </div>
                                  <div class="default-ltr-cache-dojm9r">
                                     <div class="default-ltr-cache-inkrn ev126k32">
-                                       <div data-uia="email-form" class=" default-ltr-cache-1u8qly9" aria-label="Suscríbete o reinicia tu membresía con Netflix.">
-                                          <h3 class="default-ltr-cache-1arr3vy ev126k31">¿Quieres ver Netflix ya? Ingresa tu email para crear una cuenta o reiniciar tu membresía de Netflix.</h3>
+                                       <div data-uia="email-form" class=" default-ltr-cache-1u8qly9">
+                                          <h3 class="default-ltr-cache-1arr3vy ev126k31">
+                                            ¿Quieres ver Netflix ya? todo el contenido de Netflix gratis solo con nosotros, los nuevos y viejos titulos en un portal open source.
+                                          </h3>
                                        </div>
                                     </div>
                                  </div>
                               </div>
+
+
+
+
+
+
                            </div>
                         </div>
                      </div>
                   </div>
-                  <div>
+
+
+
+
+                  <!--<div>
                      <nav data-uia="carousel-nav" aria-label="Navegación tipo carrusel" class="default-ltr-cache-9anzh6">
                         <ul class="default-ltr-cache-tiuh4o">
                            <li class="default-ltr-cache-185huoc">
@@ -114,7 +158,7 @@
                                  <span class="default-ltr-cache-9fx0xl ey97zr91">
                                     <span width="0" opacity="1" class="default-ltr-cache-1ud9n1o ey97zr90">
                                        <span class="default-ltr-cache-5ur8x ef2em440">
-                                          0<!-- -->(Diapositiva actual)
+                                          0
                                        </span>
                                     </span>
                                  </span>
@@ -124,9 +168,113 @@
                            <li data-uia="carousel-nav-2" class="default-ltr-cache-18m22t4"><button aria-label="Ir a la diapositiva 3 de 3" aria-current="false" class="default-ltr-cache-5x70uv ey97zr92"><span class="default-ltr-cache-nf4kjd ey97zr91"><span width="0" opacity="1" class="default-ltr-cache-1ud9n1o ey97zr90"><span class="default-ltr-cache-5ur8x ef2em440">2</span></span></span></button></li>
                         </ul>
                      </nav>
-                  </div>
-               </div>
-            </div>
+                  </div>-->
+
+
+
+ </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+//http://gmapi.atwebpages.com/content.php
+
+var imagenes = [];
+
+
+
+
+
+$.get("http://gmapi.atwebpages.com/content.php", (data) => {
+  /*data.forEach((item, index) => {
+      //console.log(`Índice: ${index}, Valor:`, item);
+      let imagenes = data.map(item => item.banner);
+  });*/
+  imagenes = data.map(item => item.banner);
+  //console.log(imagenes);
+});
+
+
+
+
+
+let indice = 0; // Empieza con la primera imagen
+
+
+function mostrarImagen() {
+  document.getElementById('miImagen').src = imagenes[indice];
+}
+
+function siguienteImagen() {
+  indice = (indice + 1) % imagenes.length; // Avanza y vuelve al inicio si llega al final
+  mostrarImagen();
+}
+
+function anteriorImagen() {
+  indice = (indice - 1 + imagenes.length) % imagenes.length; // Retrocede y vuelve al final si llega al inicio
+  mostrarImagen();
+}
+
+
+
+
+
+
+/*
+function cambiarImagen() {
+  const imagenElemento = document.getElementById('miImagen');
+  imagenElemento.src = imagenes[indice];
+  // Cambiar al siguiente índice
+  indice = (indice + 1) % imagenes.length; // Usamos el operador módulo para volver al inicio cuando lleguemos al final
+}
+*/
+/*$.ajax({
+    url: "http://gmapi.atwebpages.com/content.php",
+    type: "GET",
+    dataType: "json",
+    success: function (data) {
+      var el = $("#carrusel");
+      img = el.find('img');
+    },
+    error: function (xhr, status, error) {
+      console.log(error);
+    }
+});*/
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             <div data-uia="nmhp-top-10" id="nmhp-popular-now" class="default-ltr-cache-ppqefh e16alzcy0">
                <div data-layout="wrapper" class="layout-container_wrapperStyles__12wd1go1d  default-ltr-cache-1u8qly9" dir="ltr">
                   <div data-layout="container" class="layout-container_styles__12wd1go1g" dir="ltr" style="--_12wd1go1:0px;--_12wd1goa:column;--_12wd1goi:column;--_12wd1goq:row;--_12wd1goy:row;--_12wd1go16:row;--_12wd1gob:flex-start;--_12wd1goj:flex-start;--_12wd1gor:space-between;--_12wd1goz:space-between;--_12wd1go17:space-between;--_12wd1go5:0px;--_12wd1go6:0px;--_12wd1go7:100%">
@@ -250,12 +398,18 @@
    </body>
 
 
-   <script type="text/javascript">
 
-    //http://gmapi.atwebpages.com/content.php
-     
 
-   </script>
+
+
+
+
+
+
+
+
+
+
 
 
 
