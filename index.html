@@ -193,17 +193,14 @@ var imagenes = [];
 
 
 
-
-$.get("http://gmapi.atwebpages.com/content.php", (data) => {
-  /*data.forEach((item, index) => {
-      //console.log(`Índice: ${index}, Valor:`, item);
-      let imagenes = data.map(item => item.banner);
-  });*/
-  imagenes = data.map(item => item.banner);
-  //console.log(imagenes);
-});
-
-
+fetch('https://api.allorigins.win/get?url=' + encodeURIComponent('http://gmapi.atwebpages.com/content.php'))
+.then(response => response.json()) // Convertimos la respuesta a JSON
+.then(data => {
+  const parsedData = JSON.parse(data.contents); // Convertimos el contenido en un objeto JSON
+  imagenes = parsedData.map(item => item.banner); // Extraemos las imágenes
+  console.log(imagenes); // Verificamos el resultado
+})
+.catch(error => console.error('Error al obtener datos:', error));
 
 
 
