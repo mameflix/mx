@@ -198,7 +198,7 @@ fetch('https://api.allorigins.win/get?url=' + encodeURIComponent('http://gmapi.a
 .then(data => {
   const parsedData = JSON.parse(data.contents); // Convertimos el contenido en un objeto JSON
   imagenes = parsedData.map(item => item.banner); // Extraemos las imágenes
-  console.log(imagenes); // Verificamos el resultado
+
 })
 .catch(error => console.error('Error al obtener datos:', error));
 
